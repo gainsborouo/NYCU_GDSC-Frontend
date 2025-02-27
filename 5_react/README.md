@@ -648,7 +648,7 @@ export default App;
 - 比較差異：React 會將新的虛擬 DOM 與之前的虛擬 DOM 進行比較，找出需要更新的部分。
 - 批量更新：React 最後僅更新那些必要的真實 DOM 節點，減少不必要的操作，提高性能。
 
-![img01](https://gainsborouo.github.io/NYCU_GDSC-frontend/5_react/img/img01.png)
+![img01](https://gainsborouo.github.io/NYCU_GDSC-Frontend/5_react/img/img01.png)
 
 ### 組件生命週期
 
@@ -723,7 +723,7 @@ export default App;
 
 ### SPA 示意圖
 
-![img02](https://gainsborouo.github.io/NYCU_GDSC-frontend/5_react/img/img02.png)
+![img02](https://gainsborouo.github.io/NYCU_GDSC-Frontend/5_react/img/img02.png)
 
 ## React 的性能優化
 

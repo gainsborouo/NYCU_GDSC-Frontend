@@ -18,7 +18,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
   - HTML 是網頁的核心骨架
     - 每個網頁都由 HTML 文件構成，這些文件是基於標籤的文本文件。
     - HTML 文件中的標籤用來告訴瀏覽器應該如何顯示每個部分。
-  - 範例 1（[HTML 基本架構](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex01.html)）
+  - 範例 1（[HTML 基本架構](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex01.html)）
     ```html
     <!DOCTYPE html>
     <html>
@@ -53,7 +53,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
    - HTML 中的標題：
      - HTML 提供了六種等級的標題標籤，從 `<h1>` 到 `<h6>`，`<h1>` 為最高等級的標題，通常用於網頁的主標題；而 `<h6>` 則為最小的標題，通常用於次要標題或副標題。
      - 標題會有不同的字體大小和粗細，且在語意上表達出內容的層級結構，對於 SEO 和網頁結構清晰度非常重要。
-   - 範例 2（[HTML 標題標籤](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex02.html)）
+   - 範例 2（[HTML 標題標籤](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex02.html)）
 
      ```html
      <h1>這是主標題</h1>
@@ -67,7 +67,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 2. 段落標籤
    - 使用 `<p>` 標籤來定義一段文字。段落標籤會自動在文字前後添加間距，讓不同段落之間保持分離。
    - `<p>` 主要用來展示多行文本內容，是構建網頁內容的基礎。
-   - 範例 3（[HTML 段落標籤](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex03.html)）
+   - 範例 3（[HTML 段落標籤](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex03.html)）
      ```html
      <p>這是一段文字，介紹 HTML 的基本概念。</p>
      <p>這是第二段文字，討論 HTML 如何標記內容。</p>
@@ -78,7 +78,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 1. 粗體與斜體
    - `<strong>`：用來強調某段文字，通常會顯示為粗體。
    - `<em>`：用來標記斜體字，表示文本語氣的加重。
-   - 範例 4（[HTML 粗體與斜體](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex04.html)）
+   - 範例 4（[HTML 粗體與斜體](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex04.html)）
      ```html
      <p>這是一個<strong>非常重要的</strong>提示。</p>
      <p>請務必注意，這是一段<em>特別強調的</em>文字。</p>
@@ -88,7 +88,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
    - `<br>`：用來插入換行符號，強制讓文字從下一行開始。
    - `<hr>`：插入一條水平線，用來分隔不同的內容區塊。
-   - 範例 5（[HTML 換行與水平線](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex05.html)）
+   - 範例 5（[HTML 換行與水平線](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex05.html)）
      ```html
      <p>這是一行文字。<br />這是第二行文字。</p>
      <hr />
@@ -100,14 +100,14 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 1. 超連結標籤
    - 使用 `<a>` 標籤來創建超連結，基本結構為 `<a href="網址">連結文字</a>`，`href` 是連結的目標網址。
    - 增加 `target="_blank"` 屬性，可以讓連結在新標籤頁中打開。
-   - 範例 6（[HTML 超連結標籤](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex06.html)）
+   - 範例 6（[HTML 超連結標籤](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex06.html)）
      ```html
      <a href="https://www.google.com" target="_blank">Google</a>
      ```
 2. 圖片標籤
    - 使用 `<img>` 標籤插入圖片。`src` 屬性指定圖片的路徑，`alt` 屬性提供圖片無法顯示時的替代文本。
    - 圖片可以來自網路 (`http://`或`https://` 開頭)，也可以來自本地文件。
-   - 範例 7（[HTML 圖片標籤](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex07.html)）
+   - 範例 7（[HTML 圖片標籤](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex07.html)）
      ```html
      <img
        src="https://www.w3.org/html/logo/downloads/HTML5_Badge_512.png"
@@ -129,7 +129,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
    - 使用 `<ul>` 標籤定義無序列表，列表項使用 `<li>` 標籤。
    - 無序列表的項目前面通常會有一個圓點或其他符號。
-   - 範例 8（[HTML 無序列表](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex08.html)）
+   - 範例 8（[HTML 無序列表](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex08.html)）
      ```html
      <ul>
        <li>蘋果</li>
@@ -142,7 +142,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
    - 使用 `<ol>` 標籤定義有序列表，列表項同樣使用 `<li>`。
    - 有序列表的項目會自動添加編號，如 1、2、3。
-   - 範例 9（[HTML 有序列表](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex09.html)）
+   - 範例 9（[HTML 有序列表](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex09.html)）
      ```html
      <ol>
        <li>第一步驟</li>
@@ -153,7 +153,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
 3. 巢狀列表
    - 列表可以嵌套使用，建立多層級的列表結構。
-   - 範例 10（[HTML 巢狀列表](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex10.html)）
+   - 範例 10（[HTML 巢狀列表](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex10.html)）
      ```html
      <ul>
        <li>
@@ -181,7 +181,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
    - 表格的行使用 `<tr>`（table row）標籤。
    - 表格的單元格使用 `<td>`（table data）標籤。
    - 表頭使用 `<th>`（table header）標籤，通常用於表格的第一行或第一列。
-   - 範例 11（[HTML 基本表格](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex11.html)）
+   - 範例 11（[HTML 基本表格](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex11.html)）
      ```html
      <table border="1">
        <tr>
@@ -207,7 +207,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 2. 合併單元格
    - colspan 屬性：合併多個列（橫向合併）。
    - rowspan 屬性：合併多個行（縱向合併）。
-   - 範例 12（[HTML 合併單元格](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex12.html)）
+   - 範例 12（[HTML 合併單元格](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex12.html)）
      ```html
      <table border="1">
        <tr>
@@ -235,7 +235,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
     - 輸入欄位 `<input>`
 
       - `type` 屬性定義輸入的類型，如 `text`、`password`、`email`、`submit` 等。
-      - 範例 13（[HTML 輸入欄位](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex13.html)）
+      - 範例 13（[HTML 輸入欄位](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex13.html)）
 
         ```html
         <form action="/submit_form" method="post">
@@ -256,7 +256,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
     - 文字區域 `<textarea>`
 
       - 用於輸入多行文本。
-      - 範例 14（[HTML 文字區域](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex14.html)）
+      - 範例 14（[HTML 文字區域](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex14.html)）
 
         ```html
         <form>
@@ -268,7 +268,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
     - 選擇列表 `<select>`
 
       - 提供下拉選單供用戶選擇。
-      - 範例 15（[HTML 選擇列表](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex15.html)）
+      - 範例 15（[HTML 選擇列表](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex15.html)）
 
         ```html
         <form>
@@ -285,7 +285,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
       - 複選框 `<input type="checkbox">`，用於多選。
       - 單選按鈕 `<input type="radio">`，用於單選。
-      - 範例 16（[HTML 複選框和單選按鈕](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/example/ex16.html)）
+      - 範例 16（[HTML 複選框和單選按鈕](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/example/ex16.html)）
 
         ```html
         <form>
@@ -314,7 +314,7 @@ HTML 是「HyperText Markup Language」（超文本標記語言）的縮寫，�
 
 現在，請根據以下說明進行實作，製作一個包含表單的網頁。這將綜合運用我們之前學習的 HTML 元素。
 
-![img01](https://gainsborouo.github.io/NYCU_GDSC-frontend/2_html/img/img01.png)
+![img01](https://gainsborouo.github.io/NYCU_GDSC-Frontend/2_html/img/img01.png)
 
 - 標題與表格結構
   - 使用 `<h1>` 標籤作為頁面主標題。

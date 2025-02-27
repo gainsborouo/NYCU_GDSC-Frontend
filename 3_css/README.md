@@ -115,7 +115,7 @@ input[type="text"] {
 
    - 用來設置文字的顏色，可以使用多種表示方式，例如十六進位（`#RRGGBB`）、RGB（`rgb(r, g, b)`）、RGBA（`rgba(r, g, b, a)`）、HSL（`hsl(h, s%, l%)`）等。
    - 支援關鍵字（如 `red`, `blue`, `green`）來快速指定基本顏色。
-   - 範例 1（[CSS 基本顏色應用](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex01.html)）
+   - 範例 1（[CSS 基本顏色應用](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex01.html)）
 
      ```css
      p {
@@ -143,7 +143,7 @@ input[type="text"] {
    - 指定文字顯示的字體系列，通常建議列出多個字體，以便瀏覽器選擇可以呈現的字體。
    - 可以使用系統默認字體系列（如 `serif`, `sans-serif`, `monospace`）作為備選。
    - 支援自定義字體，透過 `@font-face` 引入外部字體。
-   - 範例 2（[CSS 指定字體](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex02.html)）
+   - 範例 2（[CSS 指定字體](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex02.html)）
 
      ```css
      body {
@@ -166,7 +166,7 @@ input[type="text"] {
      - 相對單位：`em`, `rem`, `%`。
      - 關鍵字：`small`, `medium`, `large`。
    - 使用相對單位有助於提升網頁的響應式設計和無障礙性。
-   - 範例 3（[CSS 不同字體大小](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex03.html)）
+   - 範例 3（[CSS 不同字體大小](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex03.html)）
 
      ```css
      p {
@@ -191,7 +191,7 @@ input[type="text"] {
    - 用於調整文字的粗細，可接受以下值：
      - 關鍵字：`normal`（400）, `bold`（700）。
      - 數值：從 `100`（極細）到 `900`（極粗）。
-   - 範例 4（[CSS 不同字體粗細](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex04.html)）
+   - 範例 4（[CSS 不同字體粗細](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex04.html)）
 
      ```css
      .strong-text {
@@ -218,7 +218,7 @@ input[type="text"] {
      - right：右對齊。
      - center：居中對齊。
      - justify：兩端對齊，文字間距自動調整以填滿行。
-   - 範例 5（[CSS 不同對齊方式](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex05.html)）
+   - 範例 5（[CSS 不同對齊方式](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex05.html)）
 
      ```css
      .left-align {
@@ -240,7 +240,7 @@ input[type="text"] {
 
 ### 盒模型（Box Model）
 
-![img01](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/img/img01.png)
+![img01](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/img/img01.png)
 
 CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）、內邊距（Padding）、邊框（Border）和外邊距（Margin）。
 
@@ -259,7 +259,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - 雙值：`margin: 10px 20px;` 上下 10px，左右 20px。
      - 四值：`margin: 5px 10px 15px 20px;` 上、右、下、左依序設置。
 
-   - 範例 6（[CSS 不同外邊距設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex06.html)）
+   - 範例 6（[CSS 不同外邊距設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex06.html)）
 
      ```css
      .no-margin {
@@ -289,7 +289,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - 單一值：`padding: 10px;` 四周均設置 10px 的內邊距。
      - 雙值：`padding: 10px 20px;` 上下 10px，左右 20px。
      - 四值：`padding: 5px 10px 15px 20px;` 上、右、下、左依序設置。
-   - 範例 7（[CSS 不同內邊距設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex07.html)）
+   - 範例 7（[CSS 不同內邊距設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex07.html)）
 
      ```css
      .no-padding {
@@ -319,7 +319,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - 邊框寬度：如 `1px`, `2px`。
      - 邊框樣式：`solid`, `dashed`, `dotted`, `double`, `groove`, `ridge`, `inset`, `outset`。
      - 邊框顏色：可以使用顏色值或關鍵字。
-   - 範例 8（[CSS 不同邊框設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex08.html)）
+   - 範例 8（[CSS 不同邊框設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex08.html)）
 
      ```css
      .no-border {
@@ -353,7 +353,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - 寬度（`width`）：可以使用 `px`, `%`, `em`, `rem`, `vw`（視窗寬度單位）等。
      - 高度（`height`）：同寬度，支持多種單位。
      - 自動調整：`auto` 允許元素根據內容自動調整大小。
-   - 範例 9（[CSS 不同寬度和高度設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex09.html)）
+   - 範例 9（[CSS 不同寬度和高度設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex09.html)）
 
      ```css
      .fixed-size {
@@ -393,7 +393,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 
    - 設置元素的背景顏色。
    - 可以使用多種顏色表示方式，如 `#RRGGBB`, `rgb()`, `rgba()`, `hsl()`, 關鍵字等。
-   - 範例 10（[CSS 不同背景顏色](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex10.html)）
+   - 範例 10（[CSS 不同背景顏色](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex10.html)）
 
      ```css
      .bg-white {
@@ -422,7 +422,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - `background-repeat`：控制背景圖片是否重複，如 `no-repeat`, `repeat`, `repeat-x`, `repeat-y`。
      - `background-position`：控制背景圖片的位置，如 `center`, `top right`, `10px 20px`。
      - `background-attachment`：控制背景圖片是否固定，如 `fixed`, `scroll`。
-   - 範例 11（[CSS 不同背景圖片設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex11.html)）
+   - 範例 11（[CSS 不同背景圖片設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex11.html)）
 
      ```css
      .bg-no-image {
@@ -465,7 +465,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - `flex`：啟用彈性盒布局，用於構建彈性和響應式佈局。
      - `grid`：啟用網格布局，用於構建複雜的網格系統。
      - `none`：元素不會被顯示，從文檔流中移除。
-   - 範例 12（[CSS 不同顯示類型](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex12.html)）
+   - 範例 12（[CSS 不同顯示類型](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex12.html)）
 
      ```css
      .block-element {
@@ -525,7 +525,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - `absolute`：絕對定位，元素相對於最近的已定位祖先元素定位，脫離文檔流。
      - `fixed`：固定定位，元素相對於視窗定位，保持在視窗固定位置。
      - `sticky`：粘性定位，元素根據用戶的滾動位置在相對和固定定位之間切換。
-   - 範例 13（[CSS 不同定位方式](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex13.html)）
+   - 範例 13（[CSS 不同定位方式](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex13.html)）
 
      ```css
      .static-element {
@@ -577,7 +577,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
    - `display`：
      - `none`：元素完全不顯示，從文檔流中移除，不占據空間。
      - `block`, `inline`, `inline-block`, 等：控制元素的顯示類型。
-   - 範例 14（[CSS 顯示與隱藏](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex14.html)）
+   - 範例 14（[CSS 顯示與隱藏](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex14.html)）
 
      ```css
      .visible-element {
@@ -608,7 +608,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
    - 設置元素的透明度，範圍從 0（完全透明）到 1（完全不透明）。
    - `opacity`：影響整個元素及其子元素的透明度。
    - `background-color` 的 `rgba` 或 `hsla`：僅影響背景顏色的透明度，不影響內容。
-   - 範例 15（[CSS 不同透明度設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex15.html)）
+   - 範例 15（[CSS 不同透明度設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex15.html)）
 
      ```css
      .full-opacity {
@@ -637,7 +637,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - `normal`：正常字體。
      - `italic`：斜體字。
      - `oblique`：傾斜字體，與 `italic` 類似但較少使用。
-   - 範例 16（[CSS 不同字體樣式](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex16.html)）
+   - 範例 16（[CSS 不同字體樣式](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex16.html)）
 
      ```css
      .normal-text {
@@ -657,7 +657,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 
    - `letter-spacing`：設置字母之間的間距。
    - `word-spacing`：設置單詞之間的間距。
-   - 範例 17（[CSS 不同字母間距設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex17.html)）
+   - 範例 17（[CSS 不同字母間距設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex17.html)）
 
      ```css
      .default-spacing {
@@ -681,7 +681,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - `v-offset`：垂直偏移量。
      - `blur`：模糊半徑。
      - `color`：陰影顏色。
-   - 範例 18（[CSS 不同文字陰影設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex18.html)）
+   - 範例 18（[CSS 不同文字陰影設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex18.html)）
 
      ```css
      .no-shadow {
@@ -710,7 +710,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - `overline`：上劃線。
      - `line-through`：刪除線。
      - `underline overline`：同時下劃線和上劃線。
-   - 範例 19（[CSS 不同字體裝飾](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex19.html)）
+   - 範例 19（[CSS 不同字體裝飾](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex19.html)）
 
      ```css
      .no-decoration {
@@ -744,7 +744,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
      - `spread`：擴展半徑（可選）。
      - `color`：陰影顏色。
    - 支援多重陰影，以逗號分隔。
-   - 範例 20（[CSS 不同盒子陰影設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex20.html)）
+   - 範例 20（[CSS 不同盒子陰影設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex20.html)）
 
      ```css
      .no-shadow {
@@ -774,7 +774,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
     - 語法：border-radius: radius;
       - 可以單獨設置四個角的圓角，如 `border-top-left-radius`。
       - 支援不同單位，如 `px`, `%`。
-    - 範例 21（[CSS 不同圓角設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex21.html)）
+    - 範例 21（[CSS 不同圓角設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex21.html)）
 
       ```css
       .no-radius {
@@ -816,7 +816,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
       - `lighten`：選擇較亮的顏色。
       - `color-dodge`：顏色閃亮。
       - `color-burn`：顏色變暗。
-    - 範例 22（[CSS 不同背景混合模式設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex22.html)）
+    - 範例 22（[CSS 不同背景混合模式設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex22.html)）
 
       ```css
       .blend-none {
@@ -860,7 +860,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
       - `duration`：過渡效果的持續時間，如 `2s`, `500ms`。
       - `timing-function`：過渡效果的速度曲線，如 `ease`, `linear`, `ease-in`, `ease-out`, `ease-in-out`。
       - `delay`：過渡效果的延遲時間，如 `0s`, `1s`。
-    - 範例 23（[CSS 不同過渡效果設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex23.html)）
+    - 範例 23（[CSS 不同過渡效果設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex23.html)）
 
       ```css
       .transition-box {
@@ -885,7 +885,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
   - `translate(x, y)`：平移元素。
   - `skew(x-angle, y-angle)`：傾斜元素。
   - `matrix(a, b, c, d, e, f)`：2D 變換矩陣。
-- 範例 24（[CSS 不同變形設置](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex24.html)）
+- 範例 24（[CSS 不同變形設置](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex24.html)）
 
   ```css
   .rotate-box {
@@ -928,7 +928,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 
 當垂直方向相鄰的塊級元素的外邊距相遇時，會發生邊距折疊，最終外邊距值取決於最大的邊距值，而不是相加。
 
-- 範例 25（[CSS 邊距折疊示意](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex25.html)）
+- 範例 25（[CSS 邊距折疊示意](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex25.html)）
 
   ```css
   .parent {
@@ -960,7 +960,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 4. 元素選擇器和偽元素選擇器
 5. 通用選擇器（最低優先權）
 
-- 範例 26（[CSS 優先權演示](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex26.html)）
+- 範例 26（[CSS 優先權演示](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex26.html)）
 
   - 第一個段落中的 `span` 使用了類選擇器 `.highlight`，因此文字顏色為綠色。
   - 第二個段落有 ID 選擇器 `#unique`，因此文字顏色為紅色。
@@ -1018,7 +1018,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 
 這樣，當屏幕寬度小於 768 像素時，表單容器的內邊距和表格寬度將自動調整，確保在手機等小屏設備上也能良好顯示。
 
-- 範例 27（[CSS 響應式設計演示](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex27.html)）
+- 範例 27（[CSS 響應式設計演示](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex27.html)）
 
   - 當瀏覽器窗口寬度大於 600 像素時，容器寬度為 80%，內邊距為 40px。
   - 當瀏覽器窗口寬度小於或等於 600 像素時，容器寬度變為 100%，內邊距減少為 20px。
@@ -1067,7 +1067,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 - 應用場景：
   - 創建水平或垂直的彈性佈局。
   - 對齊和分配空間給項目。
-- 範例 28（[CSS Flexbox 基本應用](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex28.html)）
+- 範例 28（[CSS Flexbox 基本應用](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex28.html)）
 
   ```css
   .flex-container {
@@ -1104,7 +1104,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
   - 創建複雜的網格佈局。
   - 控制元素在二維空間中的位置。
 
-- 範例 29（[CSS Grid 基本應用](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/example/ex29.html)）
+- 範例 29（[CSS Grid 基本應用](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/example/ex29.html)）
 
   ```css
   .grid-container {
@@ -1126,7 +1126,7 @@ CSS 盒模型描述了元素在頁面中的佈局，包括內容區（Content）
 ## 綜合實作
 
 現在，我們將延伸上次的 HTML 表單，為其添加更多 CSS 樣式，使表單更加美觀和易用。
-![img02](https://gainsborouo.github.io/NYCU_GDSC-frontend/3_css/img/img02.png)
+![img02](https://gainsborouo.github.io/NYCU_GDSC-Frontend/3_css/img/img02.png)
 
 ### 目標
 

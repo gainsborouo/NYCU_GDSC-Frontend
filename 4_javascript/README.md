@@ -66,7 +66,7 @@ JavaScript 的基本語法包括變數宣告、數據類型、運算符、控制
 
 以下是一個簡單的 JavaScript 範例，當用戶點擊按鈕時，會彈出一個提示框：
 
-#### 範例 1（[JavaScript 基本範例](https://gainsborouo.github.io/NYCU_GDSC-frontend/4_javascript/example/ex01.html)）
+#### 範例 1（[JavaScript 基本範例](https://gainsborouo.github.io/NYCU_GDSC-Frontend/4_javascript/example/ex01.html)）
 
 ```html
 <!DOCTYPE html>
@@ -729,7 +729,7 @@ input.addEventListener("keyup", function (event) {
 
 事件委託是一種利用事件冒泡機制來處理動態添加的元素事件的方法。
 
-#### 範例 2（[JavaScript 點擊清單項目](https://gainsborouo.github.io/NYCU_GDSC-frontend/4_javascript/example/ex02.html)）
+#### 範例 2（[JavaScript 點擊清單項目](https://gainsborouo.github.io/NYCU_GDSC-Frontend/4_javascript/example/ex02.html)）
 
 ```html
 <ul id="myList">
@@ -750,7 +750,7 @@ list.addEventListener("click", function (event) {
 ## 綜合實作
 
 現在，我們將延伸上次的 HTML 表單，為其添加更多 JavaScript 功能，使表單更加易用。
-![img02](https://gainsborouo.github.io/NYCU_GDSC-frontend/4_javascript/img/img01.png)
+![img02](https://gainsborouo.github.io/NYCU_GDSC-Frontend/4_javascript/img/img01.png)
 
 ### 目標
 
