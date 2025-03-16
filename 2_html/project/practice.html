@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>個人資訊表單</title>
+  </head>
+  <body>
+    <h1>請填寫你的個人資訊</h1>
+    <form>
+      <table>
+        <tr>
+          <td><label for="name">姓名：</label></td>
+          <td><input type="text" id="name" name="name" /></td>
+        </tr>
+        <tr>
+          <td><label for="email">電子郵件：</label></td>
+          <td><input type="email" id="email" name="email" /></td>
+        </tr>
+        <tr>
+          <td><label for="age">年齡：</label></td>
+          <td><input type="number" id="age" name="age" /></td>
+        </tr>
+        <tr>
+          <td>性別：</td>
+  <label>
+    <td><input type="radio" name="gender" value="boy"/>
+    男
+  </label>
+  <label>
+    <input type="radio" name="gender" value="girl"/>
+    女</td>
+       </tr>
+        <tr>
+        <td><label for ="hobbit" value ="hobbit">興趣：</label> </td>
+    <td><input type="checkbox" name="habit" value="read"/>
+    閱讀
+    <input type="checkbox" name="hobbit" value="travel"/>
+    旅遊
+    <input type="checkbox" name="hobbit" value="sport"/>
+    運動
+    
+        <tr>
+          <td><label for="word">自我介紹：</label></td>
+          <td><textarea id="word" name="word" rows="4" cols="30"></textarea></td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="提交" /> 
+            <input type="reset" value="重置" /> </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>
