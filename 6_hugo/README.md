@@ -202,7 +202,6 @@ git init
       other: 切換選單
       darkMode:
       other: 深色模式
-
       ```
 
 ### 撰寫文章
