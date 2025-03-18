@@ -277,6 +277,7 @@ Hugo 需要使用 [Markdown](https://www.markdownguide.org/getting-started/) 語
 ## Vercel
 
 [Vercel](https://vercel.com/) 是一個提供網頁的託管服務的平台，類似於 [GitHub Pages](https://pages.github.com/) 但更為強大、快速。另外 Vercel 也可以在有新的 Git 推送時自動化部署新的網頁，並每月提供 100GB 的免費流量，對小型網站架設是一大福音。下方表格為幾個常見網頁託管平台的比較：
+
 | 功能 | Vercel | Netlify | GitHub Pages |
 |-----------------|----------------------------------------|---------------------------------------|-------------------------|
 | **最適用於** | Next.js 應用 | 靜態網站 | 靜態網站 |
