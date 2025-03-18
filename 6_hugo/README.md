@@ -91,7 +91,8 @@ git init
     baseurl: https://example.com
     languageCode: zh-tw
     theme: hugo-theme-stack
-    paginate: 5
+    pagination:
+      pagerSize: 5
     title: <blog_title>
     ```
 3.  其他設定可以參考 Stack 官方提供的 [Config](https://stack.jimmycai.com/config/) 依個人喜好修改：
