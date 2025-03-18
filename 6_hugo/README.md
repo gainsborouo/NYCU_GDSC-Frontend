@@ -101,48 +101,48 @@ git init
 
       ```yaml
       params:
-      favicon: favicon.ico
+        favicon: favicon.ico
       ```
 
     - 側邊欄設定
 
-    1. 將自己的大頭貼`avatar.webp`置於`assets/img`資料夾中（若無則自行新增），並在`config.yaml` 修改以下內容：
-       ```yaml
-       params:
-         sidebar:
-           compact: false
-           emoji:
-           subtitle: <subtitle>
-           avatar:
-             enabled: true
-             local: true
-             src: img/avatar.webp
-       ```
-    2. 在副標題下方可以加上連結提供導向至自己的 GitHub 等網站，在 `config.yaml` 最下方新增以下內容：
-       ```yaml
-       menu:
-         social:
-           - identifier: github
-             name: GitHub
-             url: <github_link>
-             params:
-               icon: brand-github
-       ```
-    3. 若要新增導覽列則可參考 `themes/hugo-theme-stack/exampleSite`中的檔案內容與架構，修改後`content` 資料夾中的檔案架構將如下所示：
-       ```
-       ├── _index.md
-       ├── categories
-       ├── page
-       │   ├── about
-       │   │   └── index.md
-       │   ├── archives
-       │   │   └── index.md
-       │   ├── links
-       │   │   └── index.md
-       │   └── search
-       │       └── index.md
-       └── post
-       ```
+      1. 將自己的大頭貼`avatar.webp`置於`assets/img`資料夾中（若無則自行新增），並在`config.yaml` 修改以下內容：
+         ```yaml
+         params:
+           sidebar:
+             compact: false
+             emoji:
+             subtitle: <subtitle>
+             avatar:
+               enabled: true
+               local: true
+               src: img/avatar.webp
+         ```
+      2. 在副標題下方可以加上連結提供導向至自己的 GitHub 等網站，在 `config.yaml` 最下方新增以下內容：
+         ```yaml
+         menu:
+           social:
+             - identifier: github
+               name: GitHub
+               url: <github_link>
+               params:
+                 icon: brand-github
+         ```
+      3. 若要新增導覽列則可參考 `themes/hugo-theme-stack/exampleSite`中的檔案內容與架構，修改後`content` 資料夾中的檔案架構將如下所示：
+         ```
+         ├── _index.md
+         ├── categories
+         ├── page
+         │   ├── about
+         │   │   └── index.md
+         │   ├── archives
+         │   │   └── index.md
+         │   ├── links
+         │   │   └── index.md
+         │   └── search
+         │       └── index.md
+         └── post
+         ```
 
     - 文章設定  
       修改以下 `config.yaml` 的內容讓文章可以支援 LaTeX，並加上目錄、閱讀時長、預設 CC 授權等內容：
