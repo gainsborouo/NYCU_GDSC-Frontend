@@ -342,7 +342,6 @@ Hugo 需要使用 [Markdown](https://www.markdownguide.org/getting-started/) 語
    </script>
    <script defer src="/_vercel/insights/script.js"></script>
    ```
-   > &#x26a0;&#xfe0f;**注意：** 請不要替換此部分的 `<>`。
 5. 將更新後的網站 push 至 GitHub，重整 Vercel 後台即可查看網頁分析。
 
 ## Google Search Console
