@@ -127,7 +127,7 @@ git init
                name: GitHub
                url: <github_link>
                params:
-                 icon: brand-github
+               icon: brand-github
          ```
       3. 若要新增導覽列則可參考 `themes/hugo-theme-stack/exampleSite`中的檔案內容與架構，修改後`content` 資料夾中的檔案架構將如下所示：
          ```
@@ -149,13 +149,13 @@ git init
       修改以下 `config.yaml` 的內容讓文章可以支援 LaTeX，並加上目錄、閱讀時長、預設 CC 授權等內容：
       ```yaml
       params:
-      article:
-      math: true
-      toc: true
-      readingTime: true
-      license:
-        enabled: true
-        default: CC BY-NC-SA 4.0
+        article:
+        math: true
+        toc: true
+        readingTime: true
+        license:
+          enabled: true
+          default: CC BY-NC-SA 4.0
       ```
     - 留言設定
 
