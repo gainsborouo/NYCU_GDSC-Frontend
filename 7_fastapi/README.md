@@ -62,6 +62,47 @@
 - 可重複使用、易於維護與測試
 - 同一組 API 可同時供多種客戶端（Web、Mobile、其他服務）使用
 
+## RESTful API 的概念與設計原則
+
+REST（Representational State Transfer）是一種設計 API 的架構風格，遵循此架構風格所建立的 API 即稱為 RESTful API。
+
+RESTful API 定義了一組清晰、統一且易懂的原則，讓 API 更容易被開發者理解、使用和維護。
+
+### RESTful API 的核心原則
+
+1. 資源導向（Resource-Based）
+
+   - 所有資料或功能都視為資源，以 URL 表示。
+   - URL 應直觀且可讀，例如：
+     - `/users` 表示使用者集合資源
+     - `/items/123` 表示 ID 為 123 的單一商品資源
+
+2. 統一介面（Uniform Interface）
+   - 使用 HTTP 方法（GET、POST、PUT、DELETE 等）表示不同的操作。
+   - 每個 HTTP 方法都有固定的語義（如 GET 為讀取、POST 為新增等）。
+3. 無狀態（Stateless）
+
+   - 每個請求皆獨立且完整，伺服器不會儲存任何客戶端狀態。
+   - 用戶端須透過每次請求完整提供所有必要的資訊（例如授權 Token 等）。
+
+4. 回傳資源的表現形式（Representation）
+
+   - 資源透過特定格式呈現，如 JSON 或 XML，JSON 為目前最廣泛採用。
+
+### RESTful API 設計範例
+
+一個良好設計的 RESTful API 通常依據「資源類型」設計 URL 路徑，搭配 HTTP 方法來對應操作：
+
+| 方法   | 路徑         | 說明                    |
+| ------ | ------------ | ----------------------- |
+| GET    | `/users`     | 取得所有使用者          |
+| POST   | `/users`     | 新增使用者              |
+| GET    | `/users/123` | 取得 ID 為 123 的使用者 |
+| PUT    | `/users/123` | 更新 ID 為 123 的使用者 |
+| DELETE | `/users/123` | 刪除 ID 為 123 的使用者 |
+
+使用上述設計方式可大幅提高 API 可讀性，降低開發與維護的難度。
+
 ## 常見的 HTTP 方法與 Web API 操作
 
 Web API 通常是基於 **HTTP 通訊協定**設計的。最常用的四種 HTTP 方法分別為：
@@ -113,18 +154,6 @@ Web API 通常是基於 **HTTP 通訊協定**設計的。最常用的四種 HTTP
 | Read      | GET       | 讀取資源 |
 | Update    | PUT       | 更新資源 |
 | Delete    | DELETE    | 刪除資源 |
-
-### 路徑設計實例
-
-一個良好設計的 RESTful API 通常依據「資源類型」設計 URL 路徑，搭配 HTTP 方法來對應操作：
-
-| 方法   | 路徑         | 說明                    |
-| ------ | ------------ | ----------------------- |
-| GET    | `/users`     | 取得所有使用者          |
-| POST   | `/users`     | 新增使用者              |
-| GET    | `/users/123` | 取得 ID 為 123 的使用者 |
-| PUT    | `/users/123` | 更新 ID 為 123 的使用者 |
-| DELETE | `/users/123` | 刪除 ID 為 123 的使用者 |
 
 ### 補充：其他 HTTP 方法
 
