@@ -214,3 +214,205 @@ Web API 通常是基於 **HTTP 通訊協定**設計的。最常用的四種 HTTP
   - 友善易用，適合初學者與團隊使用
   - 適合測試複雜結構與需要驗證的 API
   - 可持久化測試資料與流程，提升重用性
+
+## FastAPI 介紹與比較
+
+FastAPI 是一個現代化的 Python Web 框架，專門用來打造高性能的 Web API。
+
+### 核心優勢
+
+#### 高性能
+
+- FastAPI 從設計上即追求與 Node.js、Go 等高效能框架媲美的效能。
+- 採用：
+  - 非同步 async/await 支援
+  - 事件迴圈驅動的 Uvicorn ASGI 伺服器
+  - Starlette 底層架構
+- 適合：
+  - 高併發、高請求量的 API
+  - 與 Flask 等 WSGI 架構相比，FastAPI 在大量連線時表現更穩定。
+
+#### 型別註解與自動驗證
+
+- 利用 Python 3 的 Type Hints 搭配 Pydantic：
+  - 自動轉換請求參數類型
+  - 自動進行資料驗證與錯誤處理
+- 範例：
+  ```python
+  @app.get("/items/{item_id}")
+  def read_item(item_id: int):
+      return {"item_id": item_id}
+  ```
+  - 若傳入非整數，FastAPI 自動回傳 422 錯誤，提示類型不符。
+- 效果：
+  - 提升開發安全性
+  - 降低模板驗證程式碼需求
+
+#### 自動生成互動式 API 文件
+
+- FastAPI 內建兩種 API 文件介面，符合 OpenAPI 規範：
+  - `/docs`：使用 Swagger UI
+  - `/redoc`：使用 ReDoc
+- 功能：
+  - 自動列出所有路由、參數、模型
+  - 可直接線上測試 API 請求
+  - 無需額外撰寫文件
+
+#### 進階功能整合
+
+- 安全性支援
+  - 提供 OAuth2、JWT 等常見認證機制的建構工具
+- 擴充性與生態系統
+  - 可與 SQLAlchemy、Tortoise ORM、MongoDB 等整合
+  - 適合構建微服務或資料科學應用
+
+## 綜合實作
+
+接下來，我們透過一個簡單的商品管理範例，實作一個具有基本 CRUD 功能的 RESTful API。
+
+### API 規格
+
+- `POST /items`：新增商品
+- `GET /items`：取得所有商品清單
+- `GET /items/{id}`：取得指定 ID 的商品
+- `PUT /items/{id}`：更新指定商品
+- `DELETE /items/{id}`：刪除指定商品
+
+### 安裝套件
+
+```bash
+python3 -m venv .venv
+
+# Windows
+.venv\Scripts\activate
+# macOS/Linux
+source .venv/bin/activate
+
+pip install -r requirements.txt
+```
+
+### main.py 完整程式碼
+
+```python
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import Optional
+
+app = FastAPI()
+
+# 商品資料模型
+class Item(BaseModel):
+    name: str
+    description: Optional[str] = None
+    price: float
+
+# 模擬資料庫
+items_db = {}
+current_id = 0
+
+# 建立商品
+@app.post("/items")
+def create_item(item: Item):
+    global current_id
+    current_id += 1
+    items_db[current_id] = item
+    return {"id": current_id, **item.dict()}
+
+# 取得所有商品
+@app.get("/items")
+def list_items():
+    return [{"id": item_id, **item.dict()} for item_id, item in items_db.items()]
+
+# 取得單一商品
+@app.get("/items/{item_id}")
+def get_item(item_id: int):
+    if item_id in items_db:
+        return {"id": item_id, **items_db[item_id].dict()}
+    raise HTTPException(status_code=404, detail="Item not found")
+
+# 更新商品
+@app.put("/items/{item_id}")
+def update_item(item_id: int, new_item: Item):
+    if item_id in items_db:
+        items_db[item_id] = new_item
+        return {"id": item_id, **new_item.dict()}
+    raise HTTPException(status_code=404, detail="Item not found")
+
+# 刪除商品
+@app.delete("/items/{item_id}")
+def delete_item(item_id: int):
+    if item_id in items_db:
+        del items_db[item_id]
+        return {"detail": "Item deleted"}
+    raise HTTPException(status_code=404, detail="Item not found")
+```
+
+### 啟動伺服器
+
+```bash
+uvicorn main:app --reload
+```
+
+伺服器啟動後將在 `http://127.0.0.1:8000` 提供 API，並可訪問：
+
+- `http://127.0.0.1:8000/docs`：Swagger UI
+- `http://127.0.0.1:8000/redoc`：ReDoc 文件
+
+### 測試 API
+
+#### 新增商品
+
+```bash
+curl -X POST "http://127.0.0.1:8000/items" \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Apple", "description": "Red fruit", "price": 5.99}'
+```
+
+回應
+
+```json
+{ "id": 1, "name": "Apple", "description": "Red fruit", "price": 5.99 }
+```
+
+#### 取得所有商品
+
+```bash
+curl http://127.0.0.1:8000/items
+```
+
+回應
+
+```json
+[{ "id": 1, "name": "Apple", "description": "Red fruit", "price": 5.99 }]
+```
+
+#### 更新商品
+
+```bash
+curl -X PUT "http://127.0.0.1:8000/items/1" \
+     -H "Content-Type: application/json" \
+     -d '{"name": "Green Apple", "description": "Bright Green fruit", "price": 6.5}'
+```
+
+回應
+
+```json
+{
+  "id": 1,
+  "name": "Green Apple",
+  "description": "Bright Green fruit",
+  "price": 6.5
+}
+```
+
+#### 刪除商品
+
+```bash
+curl -X DELETE http://127.0.0.1:8000/items/1
+```
+
+回應
+
+```json
+{ "detail": "Item deleted" }
+```
