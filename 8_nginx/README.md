@@ -235,7 +235,8 @@ http {
     ```bash
     sudo ln -sf /workspaces/nginx-tutorial/nginx/default.conf /etc/nginx/sites-enabled/default
     sudo nginx -t
-    sudo service nginx restart
+    sudo service nginx start
+    # sudo service nginx restart
     ```
 
 ### 驗證流程
