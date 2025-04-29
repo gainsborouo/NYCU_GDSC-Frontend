@@ -55,10 +55,6 @@
 
 #### nginx.conf
 
-- main 區塊：工作程序數量、檔案限制
-- events 區塊：連線相關設定（worker_connections）
-- http 區塊：MIME、Gzip、全域快取、引入 `conf.d/*.conf`
-
 ```bash
 user www-data;
 worker_processes auto;
@@ -147,15 +143,11 @@ http {
 #}
 ```
 
-#### Server & Location
+- main 區塊：工作程序數量、檔案限制
+- events 區塊：連線相關設定（worker_connections）
+- http 區塊：MIME、Gzip、全域快取、引入 `conf.d/*.conf`
 
-- server 區塊
-  - `listen`：指定監聽的埠號與協定。
-  - `server_name`：根據 HTTP Request 中的 Host Header 決定匹配的 server。
-- location 區塊
-  - 支援不同的路徑匹配方式（前綴匹配、正則表達式匹配）。
-  - `root` 與 `alias`：設定靜態檔案目錄，使用方式略有差異。
-  - 常用指令包括 `proxy_pass`、`try_files`，用來做反向代理或檔案處理。
+#### Server & Location
 
 ```bash
 ##
@@ -240,6 +232,146 @@ server {
 #       }
 #}
 ```
+- server 區塊
+  - `listen`：指定監聽的埠號與協定。
+  - `server_name`：根據 HTTP Request 中的 Host Header 決定匹配的 server。
+- location 區塊
+  - 支援不同的路徑匹配方式（前綴匹配、正則表達式匹配）。
+  - `root` 與 `alias`：設定靜態檔案目錄，使用方式略有差異。
+  - 常用指令包括 `proxy_pass`、`try_files`，用來做反向代理或檔案處理。
+
+### 常見設定範例與說明
+
+以下是一些常見的 Nginx 設定範例，並附上詳細說明：
+
+#### 1. 設定 HTTP Header
+
+```bash
+location /api/ {
+    proxy_pass http://127.0.0.1:8000;
+
+    # 設定 HTTP Header，保留客戶端資訊
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+}
+```
+
+- `proxy_set_header Host $host`：將客戶端的 Host Header 傳遞給後端，確保後端能正確識別請求的 Host。
+- `proxy_set_header X-Real-IP $remote_addr`：將客戶端的真實 IP 傳遞給後端，方便後端記錄來源 IP。
+- `proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for`：記錄所有經過的代理伺服器 IP，形成完整的請求路徑。
+- `proxy_set_header X-Forwarded-Proto $scheme`：傳遞請求的協定（HTTP 或 HTTPS），後端可根據此資訊進行處理。
+
+#### 2. 設定監聽的 Port
+
+```bash
+server {
+    listen 8080;
+    listen [::]:8080;
+
+    server_name example.com;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html;
+    }
+}
+```
+
+- `listen 8080`：設定伺服器監聽的埠號為 8080，適合用於非預設 HTTP 埠號的服務。
+- `listen [::]:8080`：支援 IPv6 的監聽設定。
+- 應用場景：當伺服器需要提供多個服務時，可以使用不同的埠號來區分，例如：
+  - 80：靜態網站
+  - 8080：測試環境
+  - 8443：HTTPS 測試環境
+
+#### 3. 設定靜態檔案服務
+
+```bash
+location /static/ {
+    root /var/www/myapp;
+    autoindex on;
+}
+```
+
+- `root /var/www/myapp`：指定靜態檔案的根目錄。
+- `autoindex on`：開啟目錄瀏覽功能，當目錄中沒有 `index.html` 時，會顯示目錄列表。
+- 應用場景：適合用於提供靜態資源（如圖片、CSS、JS）的服務。
+
+#### 4. 設定 Gzip 壓縮
+
+```bash
+http {
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml+rss text/javascript;
+    gzip_min_length 1024;
+}
+```
+
+- `gzip on`：啟用 Gzip 壓縮，減少傳輸的資料量。
+- `gzip_types`：指定需要壓縮的檔案類型。
+- `gzip_min_length 1024`：設定最小壓縮大小，避免小檔案壓縮後反而增加負擔。
+- 應用場景：適合用於提升網站性能，特別是對於靜態資源的傳輸。
+
+#### 5. 設定錯誤頁面
+
+```bash
+error_page 404 /custom_404.html;
+location = /custom_404.html {
+    root /usr/share/nginx/html;
+}
+```
+
+- `error_page 404 /custom_404.html`：當發生 404 錯誤時，返回自訂的錯誤頁面。
+- 應用場景：提升用戶體驗，提供友好的錯誤提示。
+
+#### 6. 設定負載平衡
+
+```bash
+upstream backend {
+    server backend1.example.com;
+    server backend2.example.com;
+}
+
+server {
+    location / {
+        proxy_pass http://backend;
+    }
+}
+```
+
+- `upstream`：定義後端伺服器群組。
+- `proxy_pass http://backend`：將請求分發到後端伺服器群組。
+- 應用場景：適合用於高流量網站，分散請求到多台伺服器。
+
+#### 7. 設定 WebSocket 支援
+
+```bash
+location /ws/ {
+    proxy_pass http://127.0.0.1:9000;
+
+    # 保留 WebSocket 必要的 Header
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+
+    # 設定超時時間
+    proxy_read_timeout 60s;
+    proxy_send_timeout 60s;
+}
+```
+
+- `proxy_http_version 1.1`：WebSocket 需要使用 HTTP/1.1 協定。
+- `proxy_set_header Upgrade $http_upgrade`：將 Upgrade Header 傳遞給後端，告知伺服器升級為 WebSocket 連線。
+- `proxy_set_header Connection "upgrade"`：指定連線類型為升級。
+- `proxy_read_timeout` 和 `proxy_send_timeout`：設定讀取與傳送的超時時間，避免長時間未回應導致連線中斷。
+- 應用場景：適合用於即時應用，例如聊天室、即時通知等。
+
+#### 注意事項
+
+- 確保後端服務支援 WebSocket 並正確處理升級請求。
+- 若使用 HTTPS，需確保 WebSocket 連線使用 `wss://` 協定。
 
 ## 綜合實作
 
